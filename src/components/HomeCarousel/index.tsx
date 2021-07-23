@@ -25,6 +25,8 @@ export default function HomeCarousel(){
           <div className={clsx(styles.point, styles.navPointActive)}>
           </div>
           <div className={clsx(styles.point, styles.navPoint)}>
+          </div>          
+          <div className={clsx(styles.point, styles.navPoint)}>
           </div>
         </div>
       </div>
