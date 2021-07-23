@@ -18,3 +18,7 @@
 .button--warning:hover{
   background-color: #e16f1a;
 }
+
+.start-button{
+  margin-top: 50px;
+}
