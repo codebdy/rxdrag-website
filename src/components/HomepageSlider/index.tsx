@@ -7,10 +7,10 @@ export default function  HomepageSlider(props:{}){
     <section className={clsx(styles.slider)}>
       <div className = {styles.sliderMask}></div>
       <div className="container">
-        <nav className="navbar">
+        <nav className={clsx("navbar", styles.navbar)} style={{boxShadow:'none'}}>
           <div className="navbar__inner">
             <div className="navbar__items">
-              <a className="navbar__brand">Infima</a>
+              <a className="navbar__brand">rxDrag.</a>
               <a className="navbar__item navbar__link" href="#url">
                 Docs
               </a>
@@ -55,7 +55,7 @@ export default function  HomepageSlider(props:{}){
           </div>
         </nav>
       </div>
-      <div className={"hero hero--slider"} style={{height:"30rem"}}>
+      <div className={clsx("hero", styles.heroSlider)} style={{height:"30rem"}}>
       <div className="container">
         <h1 className="hero__title">您的下一行未必是代码</h1>
         <p className="hero__subtitle">用rxDrag，可以构建属于自己的低代码系统</p>

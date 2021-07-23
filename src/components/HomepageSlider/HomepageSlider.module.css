@@ -16,3 +16,13 @@
   background: url('./slider-pic2.png');
   height: 50rem;
 }
+
+.heroSlider{
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+.navbar{
+  border:0;
+}
