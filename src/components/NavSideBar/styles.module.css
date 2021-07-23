@@ -1,0 +1,11 @@
+.brand{
+  font-size: 1.2rem;
+  margin-right: 40px;
+  color:#333;
+}
+
+.sidebar{
+  background-color: #fff;
+  width: 280px;
+  z-index: 2;
+}

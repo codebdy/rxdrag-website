@@ -27,7 +27,8 @@ module.exports = {
         {
           href: 'https://github.com/rxdrag/',
           position: 'right',
-          src:'img/github.svg'
+          src:'img/github.svg',
+          label:'Github'
         },
       ],
     },

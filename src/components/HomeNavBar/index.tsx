@@ -4,6 +4,7 @@ import React, { ComponentProps, useCallback, useEffect, useState } from "react";
 import styles from "./styles.module.css"
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
 import NavbarItem from "@theme/NavbarItem"
+import NavSideBar from "../NavSideBar";
 
 function splitNavItemsByPosition(
   items: Array<ComponentProps<typeof NavbarItem>>,
@@ -55,32 +56,34 @@ export default function HomeNavBar(props:{}){
   const isDesktop = (windowSize === windowSizes.desktop);
   
   return(
-    <nav className={clsx("navbar", styles.navbar)} style={{boxShadow:'none'}}>
-          <div
-            aria-label="Navigation bar toggle"
-            className="navbar__toggle"
-            role="button"
-            tabIndex={0}
-            //onClick={showSidebar}
-            //onKeyDown={showSidebar}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              role="img"
-              focusable="false"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                strokeWidth="2"
-                d="M4 7h22M4 15h22M4 23h22"
-              />
-            </svg>
-          </div>
+    <nav className={clsx("navbar", styles.navbar,  {
+      "navbar-sidebar--show": sidebarShown,
+    })} style={{boxShadow:'none'}}>
+      <div
+        aria-label="Navigation bar toggle"
+        className="navbar__toggle"
+        role="button"
+        tabIndex={0}
+        onClick={showSidebar}
+        onKeyDown={showSidebar}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          role="img"
+          focusable="false"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+            d="M4 7h22M4 15h22M4 23h22"
+          />
+        </svg>
+      </div>
 
 
       <div className="navbar__inner">
@@ -105,22 +108,7 @@ export default function HomeNavBar(props:{}){
           }
         </div>
       </div>
-      <div
-        role="presentation"
-        className="navbar-sidebar__backdrop"
-      />
-      <div className="navbar-sidebar">
-        <div className="navbar-sidebar__brand">
-          <a
-            className={clsx("navbar__brand", styles.brandIcon)}
-            href="/"
-            
-          >
-            QuestDB
-          </a>
-        </div>
-      </div>
-
+      <NavSideBar title = {title} logo = {logo} items= {items} onHide={hideSidebar} />
     </nav>
 
   )

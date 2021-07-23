@@ -4,7 +4,6 @@
   background-color: #5d78ff;
   background: url('./slider-bg.png');
   height: 60rem;
-  position: relative;
 }
 
 .sliderMask {
@@ -18,9 +17,9 @@
 }
 
 .heroSlider{
-  position: relative;
   background-color: transparent;
   color: #fff;
   text-align: center;
+  position: relative;
 }
 
