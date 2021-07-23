@@ -28,12 +28,12 @@ module.exports = {
             {
               to: 'docs/development-guide/introduction',
               activeBasePath: 'docs/development-guide',
-              label: 'rxModels 后端',
+              label: 'rxModels 服务端',
             },
             {
               to: 'docs/vuetify2-tricks/introduction',
               activeBasePath: 'docs/vuetify2-tricks',
-              label: 'rxModels 前端',
+              label: 'rxModels 客户端',
             },
             {
               to: 'docs/vuetify2-tricks/introduction',
