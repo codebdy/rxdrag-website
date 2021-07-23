@@ -20,13 +20,8 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
-        {to: '/blog', label: 'rxModels', position: 'left'},
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'rx生态圈',
-        },
+        {to: '/', label: '首页', position: 'left'},
+        {to: '/rx-circle', label: 'rx生态圈', position: 'left'},
         {to: '/blog', label: '文章资源', position: 'left'},
         {to: '/blog', label: '关于作者', position: 'right'},
         {
