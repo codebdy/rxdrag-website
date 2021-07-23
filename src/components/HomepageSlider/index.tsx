@@ -19,7 +19,7 @@ export default function  HomepageSlider(props:{}){
         <div className="container">
           <div className = {styles.sliderMask}></div>
           <h1 className="hero__title">您的下一行未必是代码</h1>
-          <p className="hero__subtitle">用rxDrag，可以构建属于自己的低代码系统</p>
+          <p className="hero__subtitle">用rxDrag，定制属于自己的低代码平台</p>
           <div>
             <button className="button button--secondary button--lg">快速开始</button>
           </div>

@@ -20,8 +20,23 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
-        {to: '/', label: '首页', position: 'left'},
-        {to: '/rx-circle', label: 'rx生态圈', position: 'left'},
+        {to: '/rx-models', label: 'rxModels', position: 'left'},
+        {
+          activeBasePath: 'docs',
+          label: '生态圈',
+          items: [
+            {
+              to: 'docs/development-guide/introduction',
+              activeBasePath: 'docs/development-guide',
+              label: '后端',
+            },
+            {
+              to: 'docs/vuetify2-tricks/introduction',
+              activeBasePath: 'docs/vuetify2-tricks',
+              label: '前端',
+            },
+          ],
+        },
         {to: '/blog', label: '博客', position: 'left'},
         {to: '/blog2', label: '关于作者', position: 'right'},
         {
