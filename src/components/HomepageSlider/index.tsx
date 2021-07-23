@@ -10,7 +10,7 @@ export default function  HomepageSlider(props:{}){
         <nav className={clsx("navbar", styles.navbar)} style={{boxShadow:'none'}}>
           <div className="navbar__inner">
             <div className="navbar__items">
-              <a className="navbar__brand">rxDrag.</a>
+              <a className={clsx("navbar__brand", styles.brand)}>rxDrag.</a>
               <a className="navbar__item navbar__link" href="#url">
                 Docs
               </a>
@@ -44,13 +44,6 @@ export default function  HomepageSlider(props:{}){
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="navbar__items navbar__items--right">
-              <form>
-                <div className="navbar__search">
-                  <input className="navbar__search-input" placeholder="Search" />
-                </div>
-              </form>
             </div>
           </div>
         </nav>
