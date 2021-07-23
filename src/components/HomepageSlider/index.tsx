@@ -45,17 +45,17 @@ export default function  HomepageSlider(props:{}){
                 </ul>
               </div>
             </div>
-            <div class="navbar__items navbar__items--right">
+            <div className="navbar__items navbar__items--right">
               <form>
-                <div class="navbar__search">
-                  <input class="navbar__search-input" placeholder="Search" />
+                <div className="navbar__search">
+                  <input className="navbar__search-input" placeholder="Search" />
                 </div>
               </form>
             </div>
           </div>
         </nav>
       </div>
-      <div className={"hero hero--slider"} style={{height:"25rem"}}>
+      <div className={"hero hero--slider"} style={{height:"30rem"}}>
       <div className="container">
         <h1 className="hero__title">您的下一行未必是代码</h1>
         <p className="hero__subtitle">用rxDrag，可以构建属于自己的低代码系统</p>
