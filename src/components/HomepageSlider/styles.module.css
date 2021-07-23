@@ -3,17 +3,16 @@
 .slider {
   background-color: #5d78ff;
   background: url('./slider-bg.png');
-  height: 60rem;
+  height: 55rem;
 }
 
 .sliderMask {
   position: absolute;
   top:0;
   left:0;
-  height: 100%;
   width: 100%;
   background: url('./slider-pic2.png');
-  height: 50rem;
+  height: 40rem;
   pointer-events: none;
 }
 
