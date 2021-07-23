@@ -1,0 +1,28 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.featureImage {
+  height: 200px;
+  width: 200px;
+}
+
+.products{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.productName{
+  margin-top: 40px;
+}
+
+.featureItem{
+  padding: 20px;
+  border-radius: 20px;
+}
