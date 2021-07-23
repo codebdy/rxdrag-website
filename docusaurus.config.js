@@ -30,9 +30,9 @@ module.exports = {
         {to: '/blog', label: '文章资源', position: 'left'},
         {to: '/blog', label: '关于作者', position: 'right'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://github.com/rxdrag/',
           position: 'right',
+          src:'img/github.svg'
         },
       ],
     },
