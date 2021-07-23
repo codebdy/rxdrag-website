@@ -28,12 +28,17 @@ module.exports = {
             {
               to: 'docs/development-guide/introduction',
               activeBasePath: 'docs/development-guide',
-              label: '后端',
+              label: 'rxModels 后端',
             },
             {
               to: 'docs/vuetify2-tricks/introduction',
               activeBasePath: 'docs/vuetify2-tricks',
-              label: '前端',
+              label: 'rxModels 前端',
+            },
+            {
+              to: 'docs/vuetify2-tricks/introduction',
+              activeBasePath: 'docs/vuetify2-tricks',
+              label: 'DragIt 可视化前端',
             },
           ],
         },
@@ -50,47 +55,10 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
+
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+
+      copyright: `<small>Copyright © ${new Date().getFullYear()} rxDrag. Built with Docusaurus.</small> <br /> <a style="font-size:12px" href="http://beian.miit.gov.cn/" target="_blank" >鲁ICP备20004279号-2</a> `,
     },
     prism: {
       theme: lightCodeTheme,

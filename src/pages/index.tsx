@@ -1,11 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
-import Layout from '@theme/Layout';
+import Footer from '@theme/Footer';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import HomepageSlider from '../components/HomepageSlider';
+import FooterAvatar from '../components/FooterAvatar';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -35,6 +36,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+      <FooterAvatar />
     </>
   );
 }

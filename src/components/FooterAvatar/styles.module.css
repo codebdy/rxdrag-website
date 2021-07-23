@@ -1,0 +1,49 @@
+.footAvatar{
+  width:100%;
+  background-color: #1f2937;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.footAvatar img{
+  width: 60px;
+  height: 60px;
+}
+
+.maskSquircle {
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);
+  mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);
+}
+.mask {
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.layout{
+  display: flex;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.textArea{
+  margin-left: 20px;
+}
+
+.grayText{
+  color:#8d9299;
+  margin-bottom: 10px;
+}
+
+.beian a{
+  font-size: 12px;
+  color:#6b7178;
+}

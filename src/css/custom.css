@@ -17,6 +17,15 @@
   --ifm-navbar-link-color: #fff;
   */
   --ifm-code-font-size: 95%;
+
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #1f2937;
+  --ifm-footer-color: var(--ifm-footer-link-color);
+  --ifm-footer-link-color: var(--ifm-color-secondary);
+  --ifm-footer-title-color: var(--ifm-color-white);
+  color: #999;
 }
 
 .docusaurus-highlight-code-line {
