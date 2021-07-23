@@ -1,12 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
-import Footer from '@theme/Footer';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import HomepageSlider from '../components/HomepageSlider';
 import FooterAvatar from '../components/FooterAvatar';
+import Head from "@docusaurus/Head"
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -29,8 +29,21 @@ function HomepageHeader() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+  const {
+    title: siteTitle,
+  } = siteConfig
   return (
     <>
+      <Head>
+        <title> rxDrag低代码平台 | {siteTitle}</title>
+        <meta name="description"
+          content='一个免费、开源、可定制的低代码平台，基于typescript生态构建。'
+        />
+        <meta
+          name="keywords"
+          content='rxdrag, 低代码'
+        />
+      </Head>
       <HomepageSlider />
 
       <main>
