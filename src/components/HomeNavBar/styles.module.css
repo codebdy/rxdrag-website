@@ -8,6 +8,7 @@
 .logo{
   margin-top: -10px;
   margin-right: 20px;
+  width: 60px;
 }
 
 .brand{
@@ -15,6 +16,20 @@
   margin-top: -6px; 
   margin-right: 40px;
 }
+
+.mobile{
+  justify-content: center;
+}
+
+.mobile .logo{
+  margin-top: 0;
+  width: 50px;
+}
+
+.mobile .brand{
+  margin-top: 0px; 
+}
+
 .brand:hover{
   color: #fff;
 }

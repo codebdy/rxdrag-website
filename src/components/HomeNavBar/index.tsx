@@ -1,9 +1,11 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./styles.module.css"
+import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
 
 export default function HomeNavBar(props:{}){
+  const [sidebarShown, setSidebarShown] = useState(false);
   const {
     siteConfig: {
       themeConfig: {
@@ -11,6 +13,24 @@ export default function HomeNavBar(props:{}){
       },
     },
   } = useDocusaurusContext()
+
+  const showSidebar = useCallback(() => {
+    setSidebarShown(true)
+  }, [])
+  const hideSidebar = useCallback(() => {
+    setSidebarShown(false)
+  }, [])
+
+  const windowSize = useWindowSize()
+
+  useEffect(() => {
+    if (windowSize === windowSizes.desktop) {
+      setSidebarShown(false)
+    }
+  }, [windowSize])
+
+  const isDesktop = (windowSize === windowSizes.desktop);
+  
   return(
     <nav className={clsx("navbar", styles.navbar)} style={{boxShadow:'none'}}>
           <div
@@ -41,8 +61,8 @@ export default function HomeNavBar(props:{}){
 
 
       <div className="navbar__inner">
-        <div className="navbar__items">
-          <img className={styles.logo} src="img/logo.png" width="60px" />
+        <div className={clsx("navbar__items", {[styles.mobile]:!isDesktop})}>
+          <img className={styles.logo} src="img/logo.png" />
           <a className={clsx("navbar__brand", styles.brand)}>rxDrag.</a>
           <a className="navbar__item navbar__link" href="#url">
             rxModels
