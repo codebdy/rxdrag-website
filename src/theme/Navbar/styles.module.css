@@ -1,8 +1,11 @@
+.shell{
+  background-color: #5325b3;
+}
 
 .navbar{
   color: #fff;
   align-items: center;
-  background-color: #5325b3;
+  background-color: transparent;
 }
 
 .logo{
