@@ -69,7 +69,7 @@ export default function NavBar(props:{}){
           </div>
 
 
-          <div className="navbar__inner">
+          <div className={clsx("navbar__inner", styles.inner)}>
             <div className={clsx("navbar__items", {[styles.mobile]:!isDesktop})}>
               <img className={styles.logo} src={logo.src} />
               <a className={clsx("navbar__brand", styles.brand)}>{title}</a>

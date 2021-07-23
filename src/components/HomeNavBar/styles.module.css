@@ -12,10 +12,15 @@
   width: 60px;
 }
 
+.inner a{
+  color: #fff;
+}
+
 .brand{
   font-size: 1.8rem;
   margin-top: -6px; 
   margin-right: 40px;
+  color: #fff;
 }
 
 .mobile{
@@ -41,7 +46,7 @@
   position: fixed;
   top:0;
   left: 0;
-  transition: all 0.1s;
+  transition: all 0.2s;
   z-index: 100;
   box-shadow: 0 2px 5px 0 rgba(0,0,0, .3);
 }

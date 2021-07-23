@@ -13,9 +13,14 @@
   width: 40px;
 }
 
+.inner a{
+  color: #fff;
+}
+
 .brand{
   font-size: 1.2rem;
   margin-right: 40px;
+  color: #fff;
 }
 
 .mobile{
