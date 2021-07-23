@@ -7,6 +7,8 @@ import HomepageFeatures from '../components/HomepageFeatures/HomepageFeatures';
 import HomepageSlider from '../components/HomepageSlider';
 import FooterAvatar from '../components/FooterAvatar';
 import Head from "@docusaurus/Head"
+import HomeCarousel from '../components/HomeCarousel';
+import HomeNavBar from '../components/HomeNavBar';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -44,11 +46,10 @@ export default function Home() {
           content='rxdrag, 低代码'
         />
       </Head>
-      <HomepageSlider />
-
-      <main>
+        <HomepageSlider />
+        <HomeCarousel />
         <HomepageFeatures />
-      </main>
+      
       <FooterAvatar />
     </>
   );

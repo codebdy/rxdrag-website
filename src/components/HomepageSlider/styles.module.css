@@ -4,6 +4,7 @@
   background-color: #5d78ff;
   background: url('./slider-bg.png');
   height: 55rem;
+  position: relative;
 }
 
 .sliderMask {
