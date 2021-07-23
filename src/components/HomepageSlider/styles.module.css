@@ -3,7 +3,7 @@
 .slider {
   background-color: #5d78ff;
   background: url('./slider-bg.png');
-  height: 50rem;
+  height: 60rem;
   position: relative;
 }
 
@@ -18,24 +18,9 @@
 }
 
 .heroSlider{
+  position: relative;
   background-color: transparent;
   color: #fff;
   text-align: center;
 }
 
-.navbar{
-  min-height: 120px;
-}
-
-.logo{
-  margin-top: -10px;
-  margin-right: 20px;
-}
-
-.brand{
-  font-size: 1.8rem;
-  margin-top: -6px; 
-}
-.brand:hover{
-  color: #fff;
-}
