@@ -28,13 +28,19 @@ function HomepageHeader() {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+    <>
+      <div className="hero hero--primary" style={{height:"25rem"}}>
+        <div className="container">
+          <h1 className="hero__title">您的下一行未必是代码</h1>
+          <p className="hero__subtitle">用rxDrag，可以构建属于自己的低代码系统</p>
+          <div>
+            <button className="button button--secondary button--lg">快速开始</button>
+          </div>
+        </div>
+      </div>
       <main>
         <HomepageFeatures />
       </main>
-    </Layout>
+    </>
   );
 }
