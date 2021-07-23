@@ -4,6 +4,7 @@ import React from "react";
 import HomeNavBar from "../HomeNavBar";
 import styles from "./styles.module.css";
 import "./style.css";
+import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
 
 export default function  HomepageSlider(props:{}){
   const {
@@ -13,12 +14,19 @@ export default function  HomepageSlider(props:{}){
       },
     },
   } = useDocusaurusContext()
+
+  const windowSize = useWindowSize();
+  const isDesktop = (windowSize === windowSizes.desktop);
   return (
     <section className={clsx(styles.slider)}>
       <HomeNavBar />
       <div className={clsx("hero", styles.heroSlider)} style={{height:"30rem"}}>
         <div className="container">
-          <div className = {styles.sliderMask}></div>
+          {
+            isDesktop&&
+            <div className = {styles.sliderMask}></div>
+          }
+          
           <h1 className="hero__title">您的下一行未必是代码</h1>
           <p className="hero__subtitle">rxDrag，不需要代码就可以构建一个通用后端，基于ER图实现。
           </p>
