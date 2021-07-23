@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import { useState } from 'react';
 
 const FeatureList = [
   {
@@ -33,9 +34,15 @@ const FeatureList = [
 ];
 
 function Feature({src, title, description}) {
+  const[hover, setHover] = useState(false);
   return (
-    <div className={clsx('col col--4 ')} style={{padding:'30px'}}>
-      <div className = {clsx("item shadow--lw", styles.featureItem)}>
+    <div 
+      className={clsx('col col--4 ')} 
+      style={{padding:'30px'}}
+      onMouseOver = {()=>setHover(true)}
+      onMouseLeave = {()=>setHover(false)}  
+    >
+      <div className = {clsx("item", styles.featureItem, {['shadow--md']:hover, ['shadow--lw']:!hover})}>
         <div className="text--center">
           <img className={styles.featureImage} src = {src} />
         </div>

@@ -5,8 +5,10 @@
 }
 .shell{
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   background-color: #fff;
   height: 600px;
   margin-top: -260px;
+  border-radius: 20px;
+  transition: all 0.3s;
 }
