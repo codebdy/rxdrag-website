@@ -10,6 +10,7 @@
 }
 .button{
   cursor: pointer;
+  border-radius: 25px;
 }
 .button--warning{
   background-color: #ff7a17;
