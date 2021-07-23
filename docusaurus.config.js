@@ -20,7 +20,7 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
-        {to: '/rx-models', label: 'rxModels', position: 'left'},
+        {to: '/rx-models', label: '上手指南', position: 'left'},
         {
           activeBasePath: 'docs',
           label: '生态圈',
