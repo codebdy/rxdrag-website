@@ -1,33 +1,12 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
-import React, { ComponentProps, useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./styles.module.css"
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
-import NavbarItem from "@theme/NavbarItem"
 import NavSideBar from "../NavSideBar";
 import useLockBodyScroll from "@theme/hooks/useLockBodyScroll"
-
-function splitNavItemsByPosition(
-  items: Array<ComponentProps<typeof NavbarItem>>,
-): {
-  leftItems: Array<ComponentProps<typeof NavbarItem>>
-  rightItems: Array<ComponentProps<typeof NavbarItem>>
-} {
-  const leftItems = items.filter(
-    (item) =>
-      // @ts-expect-error: temporary, will be fixed in Docusaurus TODO remove soon
-      (item.position ?? DefaultNavItemPosition) === "left",
-  )
-  const rightItems = items.filter(
-    (item) =>
-      // @ts-expect-error: temporary, will be fixed in Docusaurus TODO remove soon
-      (item.position ?? DefaultNavItemPosition) === "right",
-  )
-  return {
-    leftItems,
-    rightItems,
-  }
-}
+import NavBar from "../../theme/NavBar";
+import { splitNavItemsByPosition } from "../../theme/NavBar/splitNavItemsByPosition";
 
 export default function HomeNavBar(props:{}){
   const [sidebarShown, setSidebarShown] = useState(false);
@@ -60,7 +39,7 @@ export default function HomeNavBar(props:{}){
 
   const handleScroll = function(event:any){
     let topOffset = window.pageYOffset || document.documentElement.offsetTop || 0
-    setSticky(topOffset > 60)
+    setSticky(topOffset > 100)
   }
 
   useEffect(() => {
@@ -72,7 +51,7 @@ export default function HomeNavBar(props:{}){
   },[]);
   
   return(
-    <>
+    <div className="container">
       <nav className={clsx("navbar", styles.navbar,  {
         "navbar-sidebar--show": sidebarShown,
       })} style={{boxShadow:'none'}}>
@@ -127,9 +106,9 @@ export default function HomeNavBar(props:{}){
         </div>
         <NavSideBar title = {title} logo = {logo} items= {items} onHide={hideSidebar} />
       </nav>
-      <div className={styles.stickNavArea} style={{top:sticky ? 0 : '-50px'}}>
-
+      <div className={styles.stickNavArea} style={{top:sticky ? 0 : '-70px'}}>
+        <NavBar />
       </div>
-    </>
+    </div>
   )
 }

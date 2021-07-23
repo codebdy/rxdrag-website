@@ -1,141 +1,97 @@
-import clsx from "clsx"
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import React, { ComponentProps, useCallback, useState, useEffect } from "react"
-
-//import Button from "@theme/Button"
-//import SearchBar from "@theme/SearchBar"
-import useLockBodyScroll from "@theme/hooks/useLockBodyScroll"
+import React, { useCallback, useEffect, useState } from "react";
+import NavSideBar from "../../components/NavSideBar";
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
-
+import useLockBodyScroll from "@theme/hooks/useLockBodyScroll"
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { splitNavItemsByPosition } from "./splitNavItemsByPosition";
 import styles from "./styles.module.css"
-import NavbarItem from "@theme/NavbarItem"
+import clsx from "clsx";
 
-const DefaultNavItemPosition = "right"
-
-function splitNavItemsByPosition(
-  items: Array<ComponentProps<typeof NavbarItem>>,
-): {
-  leftItems: Array<ComponentProps<typeof NavbarItem>>
-  rightItems: Array<ComponentProps<typeof NavbarItem>>
-} {
-  const leftItems = items.filter(
-    (item) =>
-      // @ts-expect-error: temporary, will be fixed in Docusaurus TODO remove soon
-      (item.position ?? DefaultNavItemPosition) === "left",
-  )
-  const rightItems = items.filter(
-    (item) =>
-      // @ts-expect-error: temporary, will be fixed in Docusaurus TODO remove soon
-      (item.position ?? DefaultNavItemPosition) === "right",
-  )
-  return {
-    leftItems,
-    rightItems,
-  }
-}
-
-function Navbar(): JSX.Element {
-  const items = [];
-  const [sidebarShown, setSidebarShown] = useState(false)
-  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false)
-
-  useLockBodyScroll(sidebarShown)
+export default function NavBar(props:{}){
+  const [sidebarShown, setSidebarShown] = useState(false);
+  const [sticky, setSticky] = React.useState(false);
+  const {
+    siteConfig: {
+      themeConfig: {
+        navbar: { logo, title, items },
+      },
+    },
+  } = useDocusaurusContext();
 
   const showSidebar = useCallback(() => {
     setSidebarShown(true)
-  }, [])
+  }, []);
   const hideSidebar = useCallback(() => {
     setSidebarShown(false)
-  }, [])
+  }, []);
 
-  const windowSize = useWindowSize()
-
+  const windowSize = useWindowSize();
+  const { leftItems, rightItems } = splitNavItemsByPosition(items);
   useEffect(() => {
     if (windowSize === windowSizes.desktop) {
       setSidebarShown(false)
     }
-  }, [windowSize])
+  }, [windowSize]);
 
-  const { leftItems, rightItems } = splitNavItemsByPosition(items)
+  const isDesktop = (windowSize === windowSizes.desktop);
+  useLockBodyScroll(sidebarShown)
 
-  return (
-    <nav
-      className={clsx("navbar", "navbar--light", "navbar--fixed-top", {
+  return(
+    <div className="container">
+      <nav className={clsx("navbar", styles.navbar,  {
         "navbar-sidebar--show": sidebarShown,
-      })}
-    >
-      <div className={clsx("navbar__inner", styles.inner)}>
-        <div className="navbar__items">
-          <div
-            aria-label="Navigation bar toggle"
-            className="navbar__toggle"
-            role="button"
-            tabIndex={0}
-            onClick={showSidebar}
-            onKeyDown={showSidebar}
+      })} style={{boxShadow:'none'}}>
+        <div
+          aria-label="Navigation bar toggle"
+          className="navbar__toggle"
+          role="button"
+          tabIndex={0}
+          onClick={showSidebar}
+          onKeyDown={showSidebar}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            role="img"
+            focusable="false"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              role="img"
-              focusable="false"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                strokeWidth="2"
-                d="M4 7h22M4 15h22M4 23h22"
-              />
-            </svg>
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              d="M4 7h22M4 15h22M4 23h22"
+            />
+          </svg>
+        </div>
+
+
+        <div className="navbar__inner">
+          <div className={clsx("navbar__items", {[styles.mobile]:!isDesktop})}>
+            <img className={styles.logo} src={logo.src} />
+            <a className={clsx("navbar__brand", styles.brand)}>{title}</a>
+            {
+              leftItems.map((item, i) => (
+                <a key={item.to + i} className="navbar__item navbar__link" href={item.to}>
+                {item.label}
+              </a>
+              ))
+            }
           </div>
-          <a className={clsx("navbar__brand", styles.brand)} href="/">
-            QuestDB
-          </a>
-          {leftItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-        </div>
-        <div className="navbar__items navbar__items--right">
-          {rightItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-        </div>
-      </div>
-      <div
-        role="presentation"
-        className="navbar-sidebar__backdrop"
-        onClick={hideSidebar}
-      />
-      <div className="navbar-sidebar">
-        <div className="navbar-sidebar__brand">
-          <a
-            className={clsx("navbar__brand", styles.brand)}
-            href="/"
-            onClick={hideSidebar}
-          >
-            QuestDB
-          </a>
-        </div>
-        <div className="navbar-sidebar__items">
-          <div className="menu">
-            <ul className="menu__list">
-              {items.map((item, i) => (
-                <NavbarItem
-                  mobile
-                  {...item}
-                  {...(item.type !== "search" && { onClick: hideSidebar })} // Search type def does not accept onClick
-                  key={i}
-                />
-              ))}
-            </ul>
+          <div className="navbar__items navbar__items--right">
+            {
+              rightItems.map((item, i) => (
+                <a key={item.to + i} className="navbar__item navbar__link" href={item.to}>
+                {item.src ? <img src={item.src} style={{marginTop:'6px'}} /> : item.label}
+              </a>
+              ))
+            }
           </div>
         </div>
-      </div>
-    </nav>
+        <NavSideBar title = {title} logo = {logo} items= {items} onHide={hideSidebar} />
+      </nav>
+    </div>
   )
 }
-
-export default Navbar

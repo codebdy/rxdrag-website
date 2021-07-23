@@ -35,12 +35,13 @@
 }
 
 .stickNavArea{
-  background-color: #fff;
-  height: 50px;
+  background-color: #5325b3;
+  height: 60px;
   width: 100%;
   position: fixed;
   top:0;
   left: 0;
   transition: all 0.1s;
   z-index: 100;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0, .3);
 }

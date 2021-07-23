@@ -14,9 +14,7 @@ export default function  HomepageSlider(props:{}){
   } = useDocusaurusContext()
   return (
     <section className={clsx(styles.slider)}>
-      <div className="container">
-        <HomeNavBar />
-      </div>
+      <HomeNavBar />
       <div className={clsx("hero", styles.heroSlider)} style={{height:"30rem"}}>
         <div className="container">
           <div className = {styles.sliderMask}></div>
