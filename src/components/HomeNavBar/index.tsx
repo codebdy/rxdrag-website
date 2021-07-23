@@ -54,7 +54,7 @@ export default function HomeNavBar(props:{}){
   
   return(
     <>
-      <div className={styles.stickNavArea} style={{top:sticky ? 0 : '-70px'}}>
+      <div className={clsx(styles.stickNavArea)} style={{top:sticky ? 0 : '-70px'}}>
         <NavBar />
       </div>   
       <div className="container">

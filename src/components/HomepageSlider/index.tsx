@@ -34,8 +34,8 @@ export default function  HomepageSlider(props:{}){
             通过拖拽等可视化操作，构建零代码前端。
           </p>
           <div className="start-button">
-            <a className="button button--info button--outline button--lg margin-right--xs" href="#url">快速开始</a>
-            <a className="button button--warning button--lg margin-left--xs" href="#url">视频演示</a>
+            <a className="button button--info button--outline button--lg margin-right--xs shadow--tl" href="#url">快速开始</a>
+            <a className="button button--warning button--lg margin-left--xs shadow--tl" href="#url">视频演示</a>
           </div>
         </div>
       </div>

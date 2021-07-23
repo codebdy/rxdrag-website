@@ -13,7 +13,20 @@ export default function HomeCarousel(){
         onMouseOver = {()=>setHover(true)}
         onMouseLeave = {()=>setHover(false)}  
       >
-
+        <div className={styles.topbar}>
+          <div className={clsx(styles.point, styles.point1)}></div>
+          <div className={clsx(styles.point, styles.point2)}></div>
+          <div className={clsx(styles.point, styles.point3)}></div>
+        </div>
+        <div className = {styles.content}>
+          <img src = "img/rxmodels.jpg" />
+        </div>
+        <div className = {styles.navbar}>
+          <div className={clsx(styles.point, styles.navPointActive)}>
+          </div>
+          <div className={clsx(styles.point, styles.navPoint)}>
+          </div>
+        </div>
       </div>
     </div>
   )
