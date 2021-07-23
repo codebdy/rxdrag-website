@@ -1,0 +1,18 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.slider {
+  background-color: #5d78ff;
+  background: url('./slider-bg.png');
+  height: 50rem;
+  position: relative;
+}
+
+.sliderMask {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background: url('./slider-pic2.png');
+  height: 50rem;
+}

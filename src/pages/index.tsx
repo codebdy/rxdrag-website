@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import HomepageSlider from '../components/HomepageSlider';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -29,15 +30,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <>
-      <div className="hero hero--primary" style={{height:"25rem"}}>
-        <div className="container">
-          <h1 className="hero__title">您的下一行未必是代码</h1>
-          <p className="hero__subtitle">用rxDrag，可以构建属于自己的低代码系统</p>
-          <div>
-            <button className="button button--secondary button--lg">快速开始</button>
-          </div>
-        </div>
-      </div>
+      <HomepageSlider />
+
       <main>
         <HomepageFeatures />
       </main>
