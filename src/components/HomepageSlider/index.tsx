@@ -10,6 +10,7 @@ export default function  HomepageSlider(props:{}){
         <nav className={clsx("navbar", styles.navbar)} style={{boxShadow:'none'}}>
           <div className="navbar__inner">
             <div className="navbar__items">
+              <img className={styles.logo} src="img/logo.png" width="60px" />
               <a className={clsx("navbar__brand", styles.brand)}>rxDrag.</a>
               <a className="navbar__item navbar__link" href="#url">
                 Docs
