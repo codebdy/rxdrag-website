@@ -7,15 +7,9 @@
   position: relative;
 }
 
-.sliderMask {
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  background: url('./slider-pic2.png');
-  height: 40rem;
-  pointer-events: none;
-  opacity: 1;
+.hasMask{
+  background: url('./slider-pic2.png') no-repeat;
+  background-size:100% ;
 }
 
 .heroSlider{

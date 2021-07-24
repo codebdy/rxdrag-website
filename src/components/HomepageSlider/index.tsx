@@ -21,17 +21,12 @@ export default function  HomepageSlider(props:{}){
     <section className={clsx(styles.slider)}>
       <HomeNavBar />
       <div className={clsx("hero", styles.heroSlider)} style={{height:"30rem"}}>
-        <div className="container">
-          {
-            isDesktop&&
-            <div className = {styles.sliderMask}></div>
-          }
-          
+        <div className={clsx("container", {[styles.hasMask]:isDesktop})}>
           <h1 className="hero__title">您的下一行未必是代码</h1>
-          <p className="hero__subtitle">rxDrag，不需要代码就可以构建一个通用后端，基于ER图实现。
+          <p className="hero__subtitle">rxDrag，涵盖前端到后端的低代码平台，基于TypeScript生态构建。
           </p>
           <p className="hero__subtitle"> 
-            通过拖拽等可视化操作，构建零代码前端。
+            前后端分离，拼插式生态链，您可以选择适合自己的切入点。
           </p>
           <div className="start-button">
             <a className="button button--info button--outline button--lg margin-right--xs shadow--tl" href="#url">快速开始</a>
