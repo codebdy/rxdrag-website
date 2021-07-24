@@ -45,6 +45,7 @@ export default function Home() {
           name="keywords"
           content='rxdrag, 低代码'
         />
+        <link rel='shortcut icon' type='image/x-icon' href={siteConfig.favicon} />
       </Head>
         <HomepageSlider />
         <HomeCarousel />
