@@ -35,7 +35,7 @@ export default function NavBar(props:{}){
     }
   }, [windowSize]);
 
-  const isDesktop = (windowSize === windowSizes.desktop);
+  const isMobile = (windowSize === windowSizes.mobile);
   useLockBodyScroll(sidebarShown)
 
   return(
@@ -72,7 +72,7 @@ export default function NavBar(props:{}){
 
 
           <div className={clsx("navbar__inner", styles.inner)}>
-            <div className={clsx("navbar__items", {[styles.mobile]:!isDesktop})}>
+            <div className={clsx("navbar__items", {[styles.mobile]:isMobile})}>
               <a  href="/" className={clsx("navbar__brand", styles.brand)}>
                 <img className={styles.logo} src={logo.src} /> {title}
               </a>
