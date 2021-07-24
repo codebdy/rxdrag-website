@@ -16,7 +16,7 @@ export default function FooterAvatar(){
           <li> <a href="#">生态圈</a> </li>
           <li> <a href="#">应用</a> </li>
           <li> <a href="#">GITHUB</a> </li>          
-          <li> <a href="#">交流群</a> </li>
+          <li> QQ群：957619750 </li>
         </ul>
 
       </div>
@@ -29,7 +29,7 @@ export default function FooterAvatar(){
         </div>
         <div className={styles.textArea}>
           <div className={styles.grayText}>
-            Designed and developed by
+            设计制作 by
           </div>
           <div><a target="_blank" href="https://github.com/rxdrag">悠闲的水</a></div>
         </div>
