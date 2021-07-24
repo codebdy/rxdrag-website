@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import { tongjiScript } from "../../consts";
 import styles from "./styles.module.css"
 
 export default function FooterAvatar(){
@@ -23,7 +24,11 @@ export default function FooterAvatar(){
           鲁ICP备20004279号-2
         </a> 
       </div>
-      
+      {
+        <div  dangerouslySetInnerHTML = {{__html:tongjiScript}} >
+
+        </div>
+      }
     </div>
   )
 }
