@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 介绍
 
-了解什么是rxDrag，以及它能为我们做些什么， **仅需2分钟就够了**。
+了解什么是rxDrag，以及它能为我们做些什么， **仅需5分钟就够了**。
 
 ## 什么是rxDrag
 
@@ -30,31 +30,20 @@ rxDrag是一个低代码生态链，可以选择在以下节点上使用：
 * 后续会开发一些应用，不断降低使用者的门槛，敬请期待。
 
 ## rxDrag基于什么技术栈？
+rxDrag所有部分都是用TypeScript语言开发。
+
+**前端部分**：React, Mobx, Swr, Axios, Mui
+
+**后端部分**：NestJs, TypeOrm, MySq 8.0+
 
 ## 使用rxDrag需要的知识？
 
-Get started by **creating a new site**.
+这个您在生态链的哪个节点使用，如果只是轻度使用rxModels通用后端，它遵循的是传统Web接口，不管是VUE还是React开发者，都可以轻松调用。
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+如果您想深度定制后端，那么您要了解rxDrag所涉及的技术栈。
 
-## Generate a new site
+如果您要深度定制前端，那么您要了解前端所涉及的技术栈。
 
-Generate a new Docusaurus site using the **classic template**:
+## 马上开始
 
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+浏览在线演示，可以快速了解rxDrag。下载代码，并在本机运行，是最快的开始方式。
