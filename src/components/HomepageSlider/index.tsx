@@ -18,7 +18,7 @@ export default function  HomepageSlider(props:{}){
     <section className={clsx(styles.slider)}>
       <HomeNavBar />
       <div className={clsx("hero", styles.heroSlider)} style={{height:"30rem"}}>
-        <div className={clsx("container", styles.hasMask)}>
+        <div className={clsx("container")}>
           <h1 className="hero__title">您的下一行未必是代码</h1>
           <p className="hero__subtitle">rxDrag，涵盖前端到后端的低代码平台，基于TypeScript生态构建。
           </p>

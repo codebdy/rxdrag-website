@@ -9,15 +9,13 @@
   position: relative;
 }
 
-.hasMask{
-  background: url('./slider-pic2.png') no-repeat;
-  background-size:100% ;
-}
-
 .heroSlider{
   background-color: transparent;
   color: #fff;
   text-align: center;
   position: relative;
+  background: url('./slider-pic2.png') no-repeat;
+  background-size:85% ;
+  background-position: 40% 0;
 }
 
