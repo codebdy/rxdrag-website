@@ -43,7 +43,6 @@ module.exports = {
           ],
         },
         {to: '/blog', label: '博客', position: 'left'},
-        {to: '/blog2', label: '关于作者', position: 'right'},
         {
           href: 'https://github.com/rxdrag/',
           position: 'right',
