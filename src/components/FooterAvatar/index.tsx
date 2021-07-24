@@ -11,11 +11,11 @@ export default function FooterAvatar(){
       </div>
       <div className = {styles.footerNav}>
         <ul>
-          <li> <a href="#">首页</a> </li>
-          <li> <a href="#">入门</a> </li>
-          <li> <a href="#">生态圈</a> </li>
-          <li> <a href="#">应用</a> </li>
-          <li> <a href="#">GITHUB</a> </li>          
+          <li> <a href="/">首页</a> </li>
+          <li> <a href="/docs/intro">文档</a> </li>
+          <li> <a href="https://rxmodels-client.rxdrag.com/" target="_blank">rxModels</a> </li>
+          <li> <a href="https://dragit.vercel.app/" target="_blank">DragIt</a> </li>
+          <li> <a href="https://github.com/rxdrag" target="_blank">GITHUB</a> </li>          
           <li> QQ群：957619750 </li>
         </ul>
 
