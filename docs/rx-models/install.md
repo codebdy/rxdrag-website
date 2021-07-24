@@ -2,7 +2,23 @@
 sidebar_position: 1
 ---
 
-# Create a Page
+# 安装
+
+## 环境要求
+* Node.js v14.17.1
+* MySql 8.0 +
+
+## 开发环境下安装
+
+安装配置MySql，并在MySql新建一个数据库Schema，记住这个Shema的名字跟访问MySql的账号和密码，后面会用到。
+
+下载服务端代码：
+
+
+## 发布环境下安装
+不同的服务商，会有不同的安装配置，这部分已经超出了rxModels本身，请参考博客文章，如果博客里没有，就是作者还没有来得及写。
+
+配置好环境以后，具体安装步骤跟开发环境下一样，跟着Install向导走就行。
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 
