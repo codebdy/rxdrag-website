@@ -4,7 +4,6 @@ import React from "react";
 import HomeNavBar from "../HomeNavBar";
 import styles from "./styles.module.css";
 import "./style.css";
-import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
 
 export default function  HomepageSlider(props:{}){
   const {
@@ -15,13 +14,11 @@ export default function  HomepageSlider(props:{}){
     },
   } = useDocusaurusContext()
 
-  const windowSize = useWindowSize();
-  const isDesktop = (windowSize === windowSizes.desktop);
   return (
     <section className={clsx(styles.slider)}>
       <HomeNavBar />
       <div className={clsx("hero", styles.heroSlider)} style={{height:"30rem"}}>
-        <div className={clsx("container", {[styles.hasMask]:isDesktop})}>
+        <div className={clsx("container", styles.hasMask)}>
           <h1 className="hero__title">您的下一行未必是代码</h1>
           <p className="hero__subtitle">rxDrag，涵盖前端到后端的低代码平台，基于TypeScript生态构建。
           </p>
