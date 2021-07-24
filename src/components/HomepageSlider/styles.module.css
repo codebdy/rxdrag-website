@@ -2,7 +2,9 @@
 
 .slider {
   background-color: #5325b3;
-  background: #5325b3 url('./slider-bg.png');
+  background: #5325b3 url('./slider-bg.png') no-repeat;
+  background-size:125% ;
+  background-position: 45% 0;
   height: 55rem;
   position: relative;
 }

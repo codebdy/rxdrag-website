@@ -38,6 +38,7 @@ export default function Home() {
     <>
       <Head>
         <title> rxDrag低代码平台 | {siteTitle}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description"
           content='一个免费、开源、可定制的低代码平台，基于typescript生态构建。'
         />

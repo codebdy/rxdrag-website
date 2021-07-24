@@ -21,6 +21,7 @@ module.exports = {
       },
       items: [
         {to: '/docs/intro', label: '文档', position: 'left'},
+        {to: '/blog', label: '博客', position: 'left'},
         {
           label: '在线演示',
           items: [
@@ -36,7 +37,6 @@ module.exports = {
             },
           ],
         },
-        {to: '/blog', label: '博客', position: 'left'},
         {
           href: 'https://github.com/rxdrag/',
           position: 'right',
