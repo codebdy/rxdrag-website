@@ -24,7 +24,7 @@ npm install
 
 npm run start:dev
 ```
-这样服务端就运行起来了，监听的端口是3001，在浏览器输入：http://localhost:3001/ ，看到熟悉的“Hello World!”，就说明已经成功运行了。
+在浏览器输入：http://localhost:3001/ ，看到熟悉的“Hello World!”，则说明已经成功运行了。
 
 服务端使用了Sharp图形处理库来管理图片，这个库不设置代理，可能不容易安装成功，如果在`npm install`时没有成功，那么按照下面的命令，设置一下代理
 ```console
