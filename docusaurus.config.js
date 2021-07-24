@@ -20,24 +20,18 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
-        {to: '/rx-models', label: '上手指南', position: 'left'},
+        {to: '/docs/intro', label: '文档', position: 'left'},
         {
-          activeBasePath: 'docs',
-          label: '生态圈',
+          label: '在线演示',
           items: [
             {
-              to: 'docs/development-guide/introduction',
-              activeBasePath: 'docs/development-guide',
-              label: 'rxModels 服务端',
+              href: 'https://rxmodels-client.rxdrag.com/',
+              target: '_blank',
+              label: 'rxModels服务',
             },
             {
-              to: 'docs/vuetify2-tricks/introduction',
-              activeBasePath: 'docs/vuetify2-tricks',
-              label: 'rxModels 客户端',
-            },
-            {
-              to: 'docs/vuetify2-tricks/introduction',
-              activeBasePath: 'docs/vuetify2-tricks',
+              href: 'https://dragit.vercel.app/',
+              target: '_blank',
               label: 'DragIt 可视化前端',
             },
           ],
