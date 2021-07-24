@@ -1,8 +1,8 @@
 /* stylelint-disable docusaurus/copyright-header */
 
 .slider {
-  background-color: #5d78ff;
-  background: url('./slider-bg.png');
+  background-color: #5325b3;
+  background: #5325b3 url('./slider-bg.png');
   height: 55rem;
   position: relative;
 }
