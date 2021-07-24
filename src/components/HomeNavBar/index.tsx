@@ -5,8 +5,8 @@ import styles from "./styles.module.css"
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
 import NavSideBar from "../NavSideBar";
 import useLockBodyScroll from "@theme/hooks/useLockBodyScroll"
-import NavBar from "../../theme/NavBar";
-import { splitNavItemsByPosition } from "../../theme/NavBar/splitNavItemsByPosition";
+import NavBar from "../NavBar";
+import { splitNavItemsByPosition } from "../NavBar/splitNavItemsByPosition";
 import NavbarItem from "@theme/NavbarItem"
 import "./style.css"
 
