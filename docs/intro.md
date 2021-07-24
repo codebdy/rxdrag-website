@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 介绍
 
-了解什么是rxDrag，以及它能为我们做些什么， **仅需5分钟就够了**。
+了解什么是rxDrag，以及它能为我们做些什么， **仅需2分钟就够了**。
 
 ## Getting Started
 
