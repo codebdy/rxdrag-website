@@ -14,7 +14,7 @@ sidebar_position: 1
 
 ### 安装运行服务端
 ```console
-#不用下面的命令，直接在Github网站上Download一个zip格式的代码，然后解压也很方便
+#不用下面第一条命令，直接在Github网站上Download一个zip格式的代码包，然后解压也很方便
 
 git clone https://github.com/rxdrag/rx-models.git
 
@@ -38,7 +38,7 @@ npm install
 
 npm run start:dev
 ```
-希望到这里，您的服务端已经能够成功运行，要是运行不起来，可以在Github上发issue或者直接跟作者联系。
+希望到这里，您的服务端已经能成功运行，要是不行，请在Github上发issue或者直接跟作者联系。
 
 ### 安装运行客户端
 
