@@ -5,7 +5,7 @@
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 30px;
   font-size: 0.9rem;
 }
@@ -50,4 +50,38 @@
 .beian a{
   font-size: 12px;
   color:#6b7178;
+}
+
+.logo{
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.ruxin{
+  color: #a510af;
+}
+
+.footerNav{
+  padding-bottom: 40px;
+}
+
+.footerNav ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+}
+
+.footerNav ul li{
+  margin: 20px;
+
+}
+
+.footerNav ul li a{
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
