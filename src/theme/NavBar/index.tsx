@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import NavSideBar from "../NavSideBar";
+import NavSideBar from "../../components/NavSideBar";
 import useWindowSize, { windowSizes } from "@theme/hooks/useWindowSize"
 import useLockBodyScroll from "@theme/hooks/useLockBodyScroll"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
