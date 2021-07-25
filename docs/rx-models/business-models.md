@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# 业务实体模型
 
 Documents are **groups of pages** connected through:
 
