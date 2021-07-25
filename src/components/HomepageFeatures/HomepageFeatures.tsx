@@ -7,41 +7,30 @@ const FeatureList = [
   {
     title: 'rxModels服务端',
     src: 'img/rxmodels.png',
-    description: (
-      <>
-        
-      </>
-    ),
+    url: 'https://github.com/rxdrag/rx-models',
   },
   {
     title: 'rxModels 客户端',
     src: 'img/rxmodels-client.png',
-    description: (
-      <>
-        
-      </>
-    ),
+    url:'https://github.com/rxdrag/rx-models-client',
   },
   {
     title: 'DragIt可视化前端',
     src: 'img/dragit.png',
-    description: (
-      <>
-        
-      </>
-    ),
+    url: 'https://github.com/rxdrag/dragit',
   },
 ];
 
-function Feature({src, title, description}) {
+function Feature({src, title, url}) {
   const[hover, setHover] = useState(false);
   return (
     <div 
-      className={clsx('col col--4 ')} 
+      className={clsx('col col--4 ', styles.card)} 
       style={{padding:'30px'}}
       onMouseOver = {()=>setHover(true)}
       onMouseLeave = {()=>setHover(false)}  
     >
+      <a href={url} target="_blank">
       <div className = {clsx("item", styles.featureItem, {['shadow--md']:hover, ['shadow--lw']:!hover})}>
         <div className="text--center">
           <img className={styles.featureImage} src = {src} />
@@ -50,6 +39,7 @@ function Feature({src, title, description}) {
           <h3>{title}</h3>
         </div>
       </div>
+      </a>
     </div>
   );
 }
