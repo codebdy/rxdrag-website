@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # 安装
 
+<font color="#dd0000">rxDrag还在开发测试中，想找个工具马上使用的朋友，就不要浪费时间安装了，等做好再来。学习交流，欢迎继续。</font>
+
 ## 环境要求
 * Node.js v14.17.1
 * MySql 8.0 +
