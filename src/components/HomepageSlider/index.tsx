@@ -26,7 +26,7 @@ export default function  HomepageSlider(props:{}){
             前后端分离，拼插式生态链，您可以选择适合自己的切入点。
           </p>
           <div className="start-button">
-            <a className="button button--info button--outline button--lg margin-right--xs shadow--tl" href="#url">快速开始</a>
+            <a className="button button--info button--outline button--lg margin-right--xs shadow--tl" href="/docs/intro">快速开始</a>
             <a className="button button--warning button--lg margin-left--xs shadow--tl" href="#url">视频演示</a>
           </div>
         </div>
