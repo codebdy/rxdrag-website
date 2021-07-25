@@ -1,5 +1,15 @@
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const tongjiScript = `<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4206943a05936791c2b5a17ff8159517";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>`
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -51,7 +61,14 @@ module.exports = {
 
       ],
 
-      copyright: `<small>Copyright © ${new Date().getFullYear()} rxDrag. Built with Docusaurus.</small> <br /> <a style="font-size:12px" href="http://beian.miit.gov.cn/" target="_blank" >鲁ICP备20004279号-2</a> `,
+      copyright: `
+        <small>Copyright © ${new Date().getFullYear()} 
+        rxDrag. Built with Docusaurus.</small> <br /> 
+        <a style="font-size:12px" href="http://beian.miit.gov.cn/" target="_blank" >
+          鲁ICP备20004279号-2
+        </a> 
+        ${tongjiScript}
+      `,
     },
     prism: {
       theme: lightCodeTheme,
