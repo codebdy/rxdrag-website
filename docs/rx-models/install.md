@@ -14,6 +14,11 @@ sidebar_position: 1
 
 安装配置MySql，并在MySql新建一个数据库Schema，记住这个Shema的名字跟访问MySql的账号和密码，后面会用到。
 
+注意Windows下安装Node.js时，要勾选这个选项（图像处理库Sharp要用到）：
+
+>Automatically install necessary tools. Note that this will also install Chocolatey. The script will pop-up in a new window after the installation completes.
+
+
 ### 安装运行服务端
 ```console
 #不用下面第一条命令，直接在Github网站上Download一个zip格式的代码包，然后解压也很方便
