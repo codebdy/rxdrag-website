@@ -27,7 +27,7 @@ import { initRxModelsSwr } from '@rxdrag/rxmodels-swr';
   initRxModelsSwr({
     //rxModels服务端URL
     serverUrl: 'http://localhost:3001/',
-    //登录路由，如果服务端返回404错误，会自动跳到该路由
+    //登录路由，如果服务端返回401错误，会自动跳到该路由
     loginUrl: '/login',
     //浏览器localStorage存储验证token的名字，一般结合登录时的“记住我”功能使用
     tokenName: 'RxModelsToken',
