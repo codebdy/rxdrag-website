@@ -1,35 +1,37 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
-# 在React中使用
+# 客户端 React hooks
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+为了客户端开发方便，我们专门开发了一套React hooks库：rxmodels-swr，用于操作rxModels服务端数据。
 
-## Front Matter
+rxmodels-swr基于[SWR](https://swr.vercel.app/zh-CN) 跟 [axios](https://axios-http.com/)实现，使用它，可以使用SWR、axios的所有特性来跟rxModels服务端交互。
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
 
-```text title="my-doc.md"
-// highlight-start
----
-id: my-doc-id
-title: My document title
-description: My document description
-slug: /my-custom-url
----
-// highlight-end
+## 安装
 
-## Markdown heading
+执行下面的命令，直接从npmjs上引入包即可。
 
-Markdown text with [links](./hello.md)
+```console
+npm install @rxdrag/rxmodels-swr
 ```
 
-## Links
+## 初始化
 
-Regular Markdown links are supported, using url paths or relative file paths.
+如果您的项目是通过Create React App创建的，那么直接在App.tsx文件中引入一下代码
 
+```tsx title="src/App.tsx"
+import { initRxModelsSwr } from '@rxdrag/rxmodels-swr';
+...
+  initRxModelsSwr({
+    serverUrl: 'http://localhost:3001/',
+    loginUrl: '/login',
+    tokenName: 'RxModelsToken',
+  });
+...
 
+```
 
 ## Images
 
