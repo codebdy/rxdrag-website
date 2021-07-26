@@ -42,7 +42,7 @@ sidebar_position: 2
 
 #### 导出文件样板
 
-一个Entity，对应一个文件，拿RxUser来说，它的代码是这个样子：
+一个Entity，对应一个文件，以RxUser为例，它的代码是这个样子：
 ```typescript
 import { RxRole } from './RxRole';
 import { RxMedia } from './RxMedia';
