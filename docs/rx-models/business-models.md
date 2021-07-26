@@ -112,7 +112,24 @@ export function AReactComponent(){
 
 ## 关系
 
+在数据库层，关系是被映射为外键的，在UI层，把关系放在跟实体并列的地位。
+
+关系也归属与某个包，具体的归属规则是这样的：
+
+* 1对1关系跟多对多关系，通过拥有者指定，关系跟拥有者一个包
+* 1对多跟多对1关系中，关系归属于多头方
+
+导出的时候，关系会随所归属的包被导出。
+
 ### 1对1
+
+![1对1](/img/tutorial/one-one.png)
+
+假如一个用户只能对应一个 RxMedia 作为头像，一个 RxMedia 只能作为一个用户的头像，那么这就是个一对一的关系。
+
+RxUser 拥有这个关系，那么映射到数据库，在 `rx_user` 表中会有一个字段 `avatarId` 对应 RxMedia 的 id。
+
+对应到TypeORM层，相当于在 RxUser 实体的 `avatar` 字段添加 `JoinColumn`。
 
 ### 1对多
 
@@ -120,52 +137,6 @@ export function AReactComponent(){
 
 ### 多对多
 
-Documents are **groups of pages** connected through:
-
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
-
-## Create your first Doc
-
-Create a markdown file at `docs/hello.md`:
-
-```md title="docs/hello.md"
-# Hello
-
-This is my **first Docusaurus document**!
-```
-
-A new document is now available at `http://localhost:3000/docs/hello`.
-
-## Configure the Sidebar
-
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
-
-Add metadatas to customize the sidebar label and position:
-
-```md title="docs/hello.md" {1-4}
----
-sidebar_label: 'Hi!'
-sidebar_position: 3
----
-
-# Hello
-
-This is my **first Docusaurus document**!
-```
-
-It is also possible to create your sidebar explicitly in `sidebars.js`:
-
-```diff title="sidebars.js"
-module.exports = {
-  tutorialSidebar: [
-    {
-      type: 'category',
-      label: 'Tutorial',
--     items: [...],
-+     items: ['hello'],
-    },
-  ],
-};
-```
+#### 多对多关系的附加信息
+有时候想在多对多关系中，添加一些附加信息，比如图片的ALT文本。Larvel 中可以使用 Povit，TypeORM并不提供这样的支持。可以把一个多对多关系，转化成两个1对多关系来解决这个问题。
+查询接口支持多级关联查询，用起来跟Povit一样方便。
