@@ -62,19 +62,24 @@ export const rxModelsSwrConfig: RxModelsSwrConfig = {
 ```
 您可以在任何时候修改这个对象的属性。
 
-## Images
+## 数据查询
+
+## 创建修改
+
+## 更新字段
+
+## 删除
+
+## 上传
+
+## Rect Hooks
+
+### useSWRQuery
 
 Regular Markdown images are supported.
 
-Add an image at `static/img/docusaurus.png` and display it in Markdown:
 
-```md
-![Docusaurus logo](/img/docusaurus.png)
-```
-
-![Docusaurus logo](/img/docusaurus.png)
-
-## Code Blocks
+### useMagicQuery
 
 Markdown code blocks are supported with Syntax highlighting.
 
