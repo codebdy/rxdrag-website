@@ -23,20 +23,65 @@ sidebar_position: 2
 
 一旦包被发布，意味着它深度融入到我们系统里了，可以通过通用接口增、删、查、改它的数据了。
 
-包的发布不能被撤销，处分您深度了解系统原理，到后端删除相应的发布文件，也是可以的。这个文件的目录是：`\schemas`。一个包一个文件，文件名字对应包的UUID，删除文件并重启后端，这个包就撤销发布了。
+包的发布不能被撤销，除非您深度了解系统原理，到后端删除相应的发布文件。
+
+这个文件的目录是：`\schemas`。一个包对应一个文件，文件名字是包的UUID，删除文件并重启后端，这个包就撤销发布了。但是这个包并没有因此被删除，您还可以再次发布它。
 
 看起来相当麻烦吧？所以，请谨慎操作包的发布。
 
 ### 导出JSON
-把一个整个包的内容，导出成一个JSON文件，并且这个文件还可以被其他人导入并使用。但是重复导入不行，系统会提示错误。
+把一个整个包的内容，导出成一个JSON文件，并且这个文件还可以被其他人导入并使用。
 
 ### 导入包
+就是把上面说的JSON文件，再次导入。但是重复导入不行，系统会提示错误。
 
 ### 导出模型接口类
+利用IDE对TypeScript的类型识别，能够提高开发效率，减少调试Bug的时间。
+
+导出这些接口类的目的，就是充分利用TypeScript的这个优势。
+
+#### 导出文件样板
+
+一个Entity，对应一个文件，拿RxUser来说，它的代码是这个样子：
+```typescript
+import { RxRole } from './RxRole';
+import { RxMedia } from './RxMedia';
+import { RxMediaFolder } from './RxMediaFolder';
+
+export const EntityRxUser = 'RxUser';
+
+export interface RxUser {
+  id?: number;
+  name: string;
+  loginName: string;
+  email?: string;
+  isSupper?: boolean;
+  isDemo?: boolean;
+  status: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  roles?: RxRole[];
+  medias?: RxMedia[];
+  mediaFolders?: RxMediaFolder[];
+  avatar?: RxMedia;
+}
+```
+创建一个新实例的时候，是没有ID的，所以id字段可以为空。其他字段，根据UI界面的设置，决定其是否可空。
+
+如果一个字段被设置为`查询时隐藏`，那么这个字段不会出现在导出的接口文件中。
+
+文件中还有一个常量 `EntityRxUser`，这个常量可以在操作数据时使用，避免了不容易排错的魔鬼字符串。
+
+#### 接口使用样例
+比如在React中，要查询所有的 RxUser实例，可以这样写代码：
+
+```typescript
+
+```
 
 ## 实体
 
-## 属性
+## 字段
 
 ## 关系
 
