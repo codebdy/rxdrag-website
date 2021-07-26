@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# React API
+# React Hooks
 
 为了客户端开发方便，我们专门开发了一套 React hooks 库：rxmodels-swr，用于操作 rxModels 服务端数据。
 
@@ -113,7 +113,7 @@ const { data, error, loading, mutate } = useMagicQuery(querybuilder, options)
 ## useMagicQueryInfinite
 无限加载时使用，底层使用[`useSWRInfinite`](https://swr.vercel.app/zh-CN/docs/pagination#useswrinfinite)实现。
 ```
-const { data, error, isValidating, mutate, size, setSize } = useMagicQueryInfinite(getKey, options)
+const { data, error, loading, isValidating, mutate, size, setSize } = useMagicQueryInfinite(getKey, options)
 ```
 
 ### 参数
@@ -123,10 +123,29 @@ const { data, error, isValidating, mutate, size, setSize } = useMagicQueryInfini
 ### 返回值
 * `data`: 一个数组，每个页面请求的响应值
 * `error`: 与 useMagicQuery 的 error 返回值相同
+* `loading`: 请求中，等待返回结果
 * `isValidating`: 与 useMagicQuery 的 isValidating 返回值相同
 * `mutate`: 和 useMagicQuery 的绑定 mutate 函数一样，但是操作 data 数组
 * `size`: 即将请求和返回的页面数
 * `setSize`: 设置需要请求的页面数
 
 ## useLazyAxios
+通过axios发送一个延时请求。
 
+```
+ const [excute, { data, loading, error }] = useLazyAxios<T>(axiosConfig, options)
+```
+
+### 参数
+* `axiosConfig`: 一个[axios请求配置](https://axios-http.com/docs/req_config)
+* `options`: onError、onCompleted两个回调
+
+### 返回值
+* `excute`: 执行函数，马上提交数据，接受参数：AxiosConfig的一个片段
+* `data`: 执行成功的返回数据
+* `loading`: 正在请求，等待返回结果
+* `error`: axios返回的错误
+
+### 参数
+* `onError`: `(error:DataError) => void`
+* `onCompleted`: `(data:T) => void`
