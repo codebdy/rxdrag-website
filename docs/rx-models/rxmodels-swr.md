@@ -248,6 +248,27 @@ excute({data:uploadBuilder.toData()});
 ```
 
 ## MagicQueryBuilder
+构建接口 `/get` 需要的参数，直接这些参数编码成符合 url 格式的字符串。
+
+### 接口
+* `setEntity`: 设置要查询的实体名
+* `setQueryString`: 传入查询字符串，字符串会被解析并跟其他接口结合使用
+* `setTake`: 设置要获取的记录数
+* `setSkip`: 设置要跳过的记录数
+* `setGetMany`: 取多条记录
+* `setGetOne`: 只取一条记录
+* `addCondition`: 添加查询条件
+* `addRelation`: 添加一个关联
+* `addEntityDirective`: 添加Entity级别的指令
+* `setTreeDirective`: 添加tree指令，以属性结构返回结果
+* `setOrderByASC`: 添加升序字段
+* `setOrderByDESC`: 添加降序字段
+* `setOrderBy`: 添加排序字段，第二个参数代表顺序
+* `setPageSize`: 设置分页大小，调用该方法后会添加@paginate指令
+* `setPageIndex`: 设置页码，调用该方法后会添加@paginate指令
+* `setWhereSql`: 添加 SQL 格式的查询条件
+* `toAxioConfig`: 输出 AxiosRequestConfig
+* `toUrl`: 输出 url
 
 ## MagicPostBuilder
 
