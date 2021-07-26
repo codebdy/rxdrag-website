@@ -4,14 +4,14 @@ sidebar_position: 6
 
 # React API
 
-为了客户端开发方便，我们专门开发了一套React hooks库：rxmodels-swr，用于操作rxModels服务端数据。
+为了客户端开发方便，我们专门开发了一套 React hooks 库：rxmodels-swr，用于操作 rxModels 服务端数据。
 
-rxmodels-swr基于[SWR](https://swr.vercel.app/zh-CN) 跟 [axios](https://axios-http.com/)实现，使用它，可以使用SWR、axios的所有特性来跟rxModels服务端交互。
+rxmodels-swr 基于[SWR](https://swr.vercel.app/zh-CN) 跟 [axios](https://axios-http.com/)实现，使用它，可以使用 SWR、axios 的所有特性来跟 rxModels 服务端交互。
 
 
 ## 安装
 
-执行下面的命令，直接从npmjs上引入包即可。
+执行下面的命令，直接从 npmjs 上引入包即可。
 
 ```console
 npm install @rxdrag/rxmodels-swr
@@ -19,7 +19,7 @@ npm install @rxdrag/rxmodels-swr
 
 ## 初始化
 
-如果您的项目是通过Create React App创建的，那么直接在`App.tsx`文件中引入一下代码
+如果您的项目是通过 Create React App 创建的，那么直接在 `App.tsx` 文件中引入一下代码
 
 ```tsx title="src/App.tsx"
 import { initRxModelsSwr } from '@rxdrag/rxmodels-swr';
@@ -36,7 +36,7 @@ import { initRxModelsSwr } from '@rxdrag/rxmodels-swr';
 
 ```
 
-`initRxModelsSwr`接受一个`RxModelsSwrConfig`对象做参数，它有以下属性
+initRxModelsSwr 接受一个 RxModelsSwrConfig 对象做参数，它有以下属性
 
 ```ts
 interface RxModelsSwrConfig {
@@ -64,7 +64,7 @@ export const rxModelsSwrConfig: RxModelsSwrConfig = {
 
 ## useSWRQuery
 
-通过axios格式参数查询数据，对`useMagicQuery`提供底层支持。
+通过axios格式参数查询数据，对 useMagicQuery 提供底层支持。
 
 ```
 const { data, error, loading, mutate } = useSWRQuery(axiosConfig, options)
@@ -77,7 +77,7 @@ const { data, error, loading, mutate } = useSWRQuery(axiosConfig, options)
 
 ### 返回值
 * `data`: 查询获得的数据
-* `error`: axios抛出的错误（或者是 undefined）
+* `error`: axios 抛出的错误（或者是 undefined）
 * `loading`: 正在等待结果返回
 * `isValidating`: 是否有请求或重新验证加载
 * `mutate(data?, shouldRevalidate?)`: 更改缓存数据的函数
@@ -93,19 +93,40 @@ const { data, error, loading, mutate } = useSWRQuery(axiosConfig, options)
 
 ## useMagicQuery
 
-通过接口`/get/...`查询数据，可以利用SWR缓存机制，基于URL进行缓存。
+通过接口 `/get/...` 查询数据，可以利用SWR缓存机制，基于URL进行缓存。
 
 ```
 const { data, error, loading, mutate } = useMagicQuery(querybuilder, options)
 ```
 
 ### 参数
-* `querybuilder`: 查询构建器`MagicQueryBuilder`
+* `querybuilder`: 查询构建器 `MagicQueryBuilder`
 * `options`:（可选）[useSwr的Options](https://swr.vercel.app/zh-CN/docs/options#%E9%80%89%E9%A1%B9) + onError、onCompleted两个回调
 
 ### 返回值
-* `data`: 查询获得的数据，类型是`QueryResult<T>{data:T;pagination?:Paginator;}`
-* 其它同`useSWRQuery`
+* `data`: 查询获得的数据，类型是 `QueryResult<T>{data:T;pagination?:Paginator;}`
+* 其它同 useSWRQuery
 
-## Admonitions
+### 选项
+跟接口 useSWRQuery 相同。
+
+## useMagicQueryInfinite
+无限加载时使用，底层使用[`useSWRInfinite`](https://swr.vercel.app/zh-CN/docs/pagination#useswrinfinite)实现。
+```
+const { data, error, isValidating, mutate, size, setSize } = useMagicQueryInfinite(getKey, options)
+```
+
+### 参数
+* getKey: 一个函数，接受索引和上一页数据，返回页面的 key
+* options: 跟 useMagicQuery 接口一致
+
+### 返回值
+* `data`: 一个数组，每个页面请求的响应值
+* `error`: 与 useMagicQuery 的 error 返回值相同
+* `isValidating`: 与 useMagicQuery 的 isValidating 返回值相同
+* `mutate`: 和 useMagicQuery 的绑定 mutate 函数一样，但是操作 data 数组
+* `size`: 即将请求和返回的页面数
+* `setSize`: 设置需要请求的页面数
+
+## useLazyAxios
 
