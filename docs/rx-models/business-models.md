@@ -76,6 +76,16 @@ export interface RxUser {
 比如在React中，要查询所有的 RxUser实例，可以这样写代码：
 
 ```typescript
+import { useMagicQuery, MagicQueryBuilder } from '@rxdrag/rxmodels-swr';
+import { RxUser, EntityRxUser } from 'entity-interface/RxUser';
+
+...
+export function AReactComponent(){
+  const {data, loading, error} = useMagicQuery<RxUser[]>(
+    new MagicQueryBuilder().setEntity(EntityRxUser)
+  )
+}
+...
 
 ```
 
