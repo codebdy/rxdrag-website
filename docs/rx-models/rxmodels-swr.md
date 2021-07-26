@@ -19,19 +19,48 @@ npm install @rxdrag/rxmodels-swr
 
 ## 初始化
 
-如果您的项目是通过Create React App创建的，那么直接在App.tsx文件中引入一下代码
+如果您的项目是通过Create React App创建的，那么直接在`App.tsx`文件中引入一下代码
 
 ```tsx title="src/App.tsx"
 import { initRxModelsSwr } from '@rxdrag/rxmodels-swr';
 ...
   initRxModelsSwr({
+    //rxModels服务端URL
     serverUrl: 'http://localhost:3001/',
+    //登录路由，如果服务端返回404错误，会自动跳到该路由
     loginUrl: '/login',
+    //浏览器localStorage存储验证token的名字，一般结合登录时的“记住我”功能使用
     tokenName: 'RxModelsToken',
   });
 ...
 
 ```
+
+initRxModelsSwr接受一个RxModelsSwrConfig对象做参数，它有以下属性
+
+```ts
+interface RxModelsSwrConfig {
+  serverUrl?: string;
+  loginUrl?: string,
+  tokenName?: string,
+  //服务端验证token，登录后传入
+  token?: string,
+}
+
+```
+
+## rxModelsSwrConfig全局对象
+一个全局对象，用于存储基本配置，初始值如下
+
+```ts
+export const rxModelsSwrConfig: RxModelsSwrConfig = {
+  serverUrl: 'http://localhost:3001/',
+  loginUrl: '/login',
+  tokenName: 'RxModelsToken',
+  token: '',
+}
+```
+您可以在任何时候修改这个对象的属性。
 
 ## Images
 
