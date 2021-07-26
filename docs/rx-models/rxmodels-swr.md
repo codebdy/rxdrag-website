@@ -250,7 +250,7 @@ excute({data:uploadBuilder.toData()});
 ## MagicQueryBuilder
 构建接口 `/get` 需要的参数，直接这些参数编码成符合 url 格式的字符串。
 
-### 接口
+### 方法
 * `setEntity`: 设置要查询的实体名
 * `setQueryString`: 传入查询字符串，字符串会被解析并跟其他接口结合使用
 * `setTake`: 设置要获取的记录数
