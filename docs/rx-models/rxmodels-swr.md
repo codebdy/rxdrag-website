@@ -149,3 +149,12 @@ const { data, error, loading, isValidating, mutate, size, setSize } = useMagicQu
 ### 参数
 * `onError`: `(error:DataError) => void`
 * `onCompleted`: `(data:T) => void`
+
+## useLazyMagicPost
+使用 `/post` 接口向 rxModels 服务器延时提交数据。
+
+```
+
+```
+
+### excute 函数
