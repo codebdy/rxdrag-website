@@ -271,9 +271,41 @@ excute({data:uploadBuilder.toData()});
 * `toUrl`: 输出 url
 
 ## MagicPostBuilder
+构建接口 `/post` 需要的参数。尚未实现在关联上添加指令的功能。
+
+### 方法
+* `setEntity`: 设置要修改的实体名
+* `setSingleData`: 仅修改或者插入一条数据，设置这条数据
+* `addEntityDirective`: 在实体上添加指令
+* `setDatas`: 设置全部数据
+* `addData`: 添加一条数据
+* `toData`: 转成可供axios提交的data
 
 ## MagicUpdateBuilder
+构建接口 `/update` 需要的参数
+
+### 方法
+* `setEntity`: 设置要修改的实体名
+* `setIds`: 设置全部要修改的实例ID
+* `addId`: 添加一个要修改的实例ID
+* `setParams`: 要修改的数据片段，格式如`{name:'you name', email:'waterli@rxdrag.com'}`
+* `toData`: 转成可供axios提交的data
 
 ## MagicDeleteBuilder
+构建接口 `/delete` 需要的参数
+
+### 方法
+* `setEntity`: 设置要修改的实体名
+* `setIds`: 设置全部要修改的实例ID
+* `addId`: 添加一个要修改的实例ID
+* `addCascade`: 设置cascade指令
+* `toData`: 转成可供axios提交的data
 
 ## MagicUploadBuilder
+构建接口 `/upload` 需要的参数
+
+## 方法
+* `setEntity`: 设置要修改的实体名
+* `setData`: 设置要创建的数据RxMedia数据
+* `setFile`: 设置要上传的文件
+* `toData`: 转成可供axios提交的FormData
