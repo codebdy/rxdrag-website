@@ -141,7 +141,7 @@ const { data, error, loading, isValidating, mutate, size, setSize } = useMagicQu
 * `options`: onError、onCompleted两个回调
 
 ### 返回值
-* `excute`: 执行函数，马上提交数据，接受参数：AxiosConfig的一个片段
+* `excute`: 执行函数，马上提交数据，接受参数：AxiosRequestConfig的一个片段
 * `data`: 执行成功的返回数据
 * `loading`: 正在请求，等待返回结果
 * `error`: axios返回的错误
@@ -154,7 +154,22 @@ const { data, error, loading, isValidating, mutate, size, setSize } = useMagicQu
 使用 `/post` 接口向 rxModels 服务器延时提交数据。
 
 ```
-
+const [excute, { data, loading, error }] = useLazyMagicPost<T>(options)
 ```
 
+### 返回值
+* `excute`: 执行函数，马上提交数据，接受参数：AxiosRequestConfig的一个片段
+* `data`: 执行成功的返回数据
+* `loading`: 正在请求，等待返回结果
+* `error`: axios返回的错误
+
+### 参数
+* `onError`: `(error:DataError) => void`
+* `onCompleted`: `(data:T) => void`
+
 ### excute 函数
+参数接受AxiosRequestConfig一个片段，实际使用中，结合MagicPostBuilder，仅需要设置data项即可
+
+```
+excute({data:postBuilder.toData()});
+```
