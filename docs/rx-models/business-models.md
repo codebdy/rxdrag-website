@@ -136,13 +136,82 @@ RxUser 拥有这个关系，那么映射到数据库，在 `rx_user` 表中会�
 
 对应到TypeORM层，相当于在 RxUser 实体的 `avatar` 字段添加 `JoinColumn`。
 
+#### 接口代码
+
+```typescript title="entity-interface/RxMedia"
+import { RxUser } from './RxUser';
+
+export const EntityRxMedia = 'RxMedia';
+
+export interface RxMedia {
+  id?: number;
+  ...
+  avatarOfUser?: RxUser;
+  ...
+}
+
+```
+
+```typescript title="entity-interface/RxUser"
+import { RxMedia } from './RxMedia';
+
+export const EntityRxUser = 'RxUser';
+
+export interface RxUser {
+  ...
+  avatar?: RxMedia;
+  ...
+}
+
+```
+
 ### 1对多
+为了演示这个关系，新建了一个包 Blog，新建的实体 Post 跟ER图位于 Blog 包。
 
 ![1对1](/img/tutorial/one-many.png)
 
+1对多关系的拥有者是多方，post 的 author 关系不会影响系统包，可以利用这个特性仔细设计您的包依赖。
+
+#### 接口代码
+
+```typescript title="entity-interface/Post"
+import { RxUser } from './RxUser';
+
+export const EntityPost = 'Post';
+
+export interface Post {
+  id?: number;
+  ...
+  author?: RxUser;
+  ...
+}
+```
+如果重新导出系统包，那么RxUser的代码也会被更新，但是这个关系对系统包来说并不重要，您可以不用关注。
+
 ### 多对1
 
+就是1对多关系的反向，添加这个关系只是为了使用方便，没有什么本质区别。
+
 ### 多对多
+多对多关系中，要留意关系的拥有者是谁，这涉及到包之间的依赖关系。
+
+这个例子中 Blog 包依赖于 System 包，就让Post拥有这个关系。相当于在 TypeORM 代码里， 给 Post的 `medias` 字段添加了 `JoinTable`。
+
+如果项目不大，忽略这些细节，也不会影响您的使用。
+
+![1对1](/img/tutorial/many-many.png)
+
+#### 接口代码
+
+```typescript title="entity-interface/Post"
+export interface Post {
+  id?: number;
+  ...
+  medias?: RxMedia[];
+  ...
+}
+```
+对于这个例子，同样可以不关注对 RxMedia 接口的影响。
 
 #### 多对多关系的附加信息
 有时候想在多对多关系中，添加一些附加信息，比如图片的ALT文本。Larvel 中可以使用 Povit，TypeORM并不提供这样的支持。可以把一个多对多关系，转化成两个1对多关系来解决这个问题。
