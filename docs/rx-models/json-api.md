@@ -16,6 +16,9 @@ rxModels 提供了五个通用JSON接口，用这个五个接口，可以完成�
 ![API使用](/img/tutorial/api.jpg)
 
 ## /get/...
+
+数据查询接口。
+
 JSON格式的查询参数，编码成url格式，使用 web 请求的 get method 查询。
 
 相比把参数放进Post method 的 body 里，get 有个明显的是优势，就是可以使用基于url的缓存，比如 rxmodels-swr 使用就是 SWR。可以充分使用SWR的缓存机制。
