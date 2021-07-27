@@ -1,136 +1,20 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # 在React中使用
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+使用我们提供的钩子库 rxmodels-swr，可以很方便的在React中使用rxModels。
 
-## Front Matter
+本文从登录页面开始，逐步介绍使用方法，随着项目的完善，案例也会越来越丰富。
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+## 开始前的准备
+如果您已经准备好探索rxModels，那么先本机安装一个，是不错的开始方式。
 
-```text title="my-doc.md"
-// highlight-start
----
-id: my-doc-id
-title: My document title
-description: My document description
-slug: /my-custom-url
----
-// highlight-end
+安装步骤很简单，请参考[安装](install.md)。
 
-## Markdown heading
+安装并已成功运行rxMolels，接下来就可以开心制作您自己的客户端。
 
-Markdown text with [links](./hello.md)
-```
+## 开始一个React项目
 
-## Links
-
-Regular Markdown links are supported, using url paths or relative file paths.
-
-
-
-## Images
-
-Regular Markdown images are supported.
-
-Add an image at `static/img/docusaurus.png` and display it in Markdown:
-
-```md
-![Docusaurus logo](/img/docusaurus.png)
-```
-
-![Docusaurus logo](/img/docusaurus.png)
-
-## Code Blocks
-
-Markdown code blocks are supported with Syntax highlighting.
-
-    ```jsx title="src/components/HelloDocusaurus.js"
-    function HelloDocusaurus() {
-        return (
-            <h1>Hello, Docusaurus!</h1>
-        )
-    }
-    ```
-
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
-}
-```
-
-## Admonitions
-
-Docusaurus has a special syntax to create admonitions and callouts:
-
-    :::tip My tip
-
-    Use this awesome feature option
-
-    :::
-
-    :::danger Take care
-
-    This action is dangerous
-
-    :::
-
-:::tip My tip
-
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
-
-:::
-
-## MDX and React Components
-
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
-
-```jsx
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
-```
-
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+## 制作登录页
