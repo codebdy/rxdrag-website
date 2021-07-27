@@ -141,6 +141,10 @@ JSON格式的查询参数，编码成url格式，使用 web 请求的 get method
 
 ## /post
 
+数据提交接口，通过 web post method发送请求。
+
+该接口有新建跟更新两个功能，如果传入的数据有 id 字段，则更新，反之新建。
+
 ## /update
 
 ## /delete
