@@ -4,26 +4,18 @@ sidebar_position: 3
 
 # JSON数据接口
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
+rxModels 提供了五个通用JSON接口，用这个五个接口，可以完成增、删、查、改、上传等功能。
 
-## Create your first Post
+接口输入时JSON格式数据，输出也是JSON格式数据。
 
-Create a file at `blog/2021-02-28-greetings.md`:
+可以用指令（格式 `@directive`）的方式扩展接口，指令支持热拔插，您可以定义自己指令插入到系统里。
 
-```md title="blog/2021-02-28-greetings.md"
----
-slug: greetings
-title: Greetings!
-author: Steven Hansel
-author_title: Docusaurus Contributor
-author_url: https://github.com/ShinteiMai
-author_image_url: https://github.com/ShinteiMai.png
-tags: [greetings]
----
+## /get/...
 
-Congratulations, you have made your first post!
+## /post
 
-Feel free to play around and edit this post as much you like.
-```
+## /update
 
-A new blog post is now available at `http://localhost:3000/blog/greetings`.
+## /delete
+
+## /upload
