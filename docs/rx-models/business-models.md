@@ -216,7 +216,7 @@ export interface Post {
 #### 多对多关系的附加信息
 如果真的要做一个 Blog 项目，对 SEO 友好是最基本的要求，这就需要为每一个 Post 关联的图片添加 alt 文本。
 
-记得 larvel 中可以使用 Povit，TypeORM并不提供这样的支持。可以再添加一个PostMediaPovit实体，把一个多对多关系，转化成两个1对多关系来解决这个问题。
+记得 larvel 中可以使用 povit 属性，TypeORM并不提供这样的支持。可以再添加一个PostMediaPovit实体，把一个多对多关系，转化成两个1对多关系来解决这个问题。
 
 ![1对1](/img/tutorial/many-many-povit.png)
 
