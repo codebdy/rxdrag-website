@@ -214,5 +214,44 @@ export interface Post {
 对于这个例子，同样可以不关注对 RxMedia 接口的影响。
 
 #### 多对多关系的附加信息
-有时候想在多对多关系中，添加一些附加信息，比如图片的ALT文本。Larvel 中可以使用 Povit，TypeORM并不提供这样的支持。可以把一个多对多关系，转化成两个1对多关系来解决这个问题。
-查询接口支持多级关联查询，用起来跟Povit一样方便。
+如果真的要做一个 Blog 项目，对 SEO 友好是最基本的要求，这就需要为每一个 Post 关联的图片添加 alt 文本。
+
+记得 larvel 中可以使用 Povit，TypeORM并不提供这样的支持。可以再添加一个PostMediaPovit实体，把一个多对多关系，转化成两个1对多关系来解决这个问题。
+
+![1对1](/img/tutorial/many-many-povit.png)
+
+#### 接口代码
+
+```typescript title="entity-interface/Post"
+import { PostMediaPovit } from './PostMediaPovit';
+import { RxUser } from './RxUser';
+
+export const EntityPost = 'Post';
+
+export interface Post {
+  id?: number;
+  ...
+  author?: RxUser;
+  mediaPovits?: PostMediaPovit[];
+  ...
+}
+
+```
+
+```typescript title="entity-interface/PostMediaPovit"
+import { Post } from './Post';
+import { RxMedia } from './RxMedia';
+
+export const EntityPostMediaPovit = 'PostMediaPovit';
+
+export interface PostMediaPovit {
+  id?: number;
+  altText: string;
+  belongsToPost?: Post;
+  media?: RxMedia;
+}
+
+```
+新建实体跟关系的拥有者还是 Blog 包，这里可以会略对 System 包的影响。
+
+通用查询接口支持多级关联查询，用起来同样也很方便。
