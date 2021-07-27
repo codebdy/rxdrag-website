@@ -4,28 +4,45 @@ sidebar_position: 4
 
 # 权限设置
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+权限是业务逻辑的一部分，把它跟实体管理接口剥离出来，是不错的主意。
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+您可以在客户端的 API 界面设置权限。
 
-## Build your site
+![权限设置界面](/img/tutorial/ability.jpg)
 
-Build your site **for production**:
+您可以在实体级别设置权限，也可以把实体展开，在字段级别设置权限。
 
-```bash
-npm run build
+## 展开
+并不是所有的实体都需要按照字段这么细的粒度进行权限管理，如果不把这些实体区分开来，可能会对性能产生一定的影响。
+
+在权限设置页面，可以通过鼠标悬停时显示的开关，来选择将实体展开与否。如果展开，那么就可以在字段级别设置权限，不展开只能在实体级别设置。
+
+在实体级别可以设置的权限：创建、删除、读取、修改。
+
+在字段级别可以设置的权限：读取、修改。
+
+## 表达式
+有的时候，需要根据条件来设置权限，只有满足条件才能具有特定权限。比如，有些角色只能修改自己创作的文章，如果文章已经发布，则不允许被删除等。
+
+通过给权限添加表达式，可以解决这个问题。当某个权限被勾选，那么权限傍边会出现一个fx符号，点击这个可以弹出对话框，输入表达式。
+
+表达式支持 SQL 的 where 语法。支持的运算符跟查询接口的 where 指令一样。
+
+如果表达式为空，则不进行条件筛选。
+
+### $me变量
+
+表达式里，内置了一个变量 `$me`，代表当前登录的用户，一个RxUser实体的实例。
+
+### 表达式示例
+
+如果只能修改自己的 Post，那么就在 Post 的 update 权限中加表达式：
+
+```
+author.id = $me.id
 ```
 
-The static files are generated in the `build` folder.
-
-## Deploy your site
-
-Test your production build locally:
-
-```bash
-npm run serve
+如果已经发布的 Post 不能被删除，那么 Post 的 delete 权限表达式是这样的：
 ```
-
-The `build` folder is now served at `http://localhost:3000/`.
-
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+status != 'PUBLISHED'
+```
