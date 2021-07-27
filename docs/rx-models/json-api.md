@@ -145,11 +145,105 @@ JSON格式的查询参数，编码成url格式，使用 web 请求的 get method
 
 该接口有新建跟更新两个功能，如果传入的数据有 id 字段，则更新，反之新建。
 
+### 请求格式
+
+```json
+{
+  "EntityName @directive(arg...)": [
+    {
+      "id": 1,
+      "field": "Field value1"
+      ...
+    },
+    {
+      "field": "Field value2",
+      "relations @directive(arg...)":[
+        3,4,
+        {
+          "field": "Relation field value"
+        }
+      ]
+      ...
+    }
+  ],
+  "EntityName @directive(arg...)":{
+    ...
+  }
+}
+```
+
+跟 get 接口一样，以 `@` 开头的是指令，您可以开发自己的指令来扩展接口。
+
+指令可以附加在实体名称后面，也可以附加在关系名称后面。附加在实体后面的指令，也可以附加在关系后面。反之，则不然。
+
+可以一次传输一条数据，也可以一次传输多条数据。
+
+现在的指令还有点少，希望以后能多发开发一些指令，比如邮件服务的 `@email` 指令，已经在开发计划中了。
+
+### 普通指令
+可以附加到关系跟实体上的指令。
+
+* `ignoreEmperty`: 如果字段值为空（null, "", undefined），则会略该字段。格式：`ignoreEmperty(field1, field2...)`
+* `bcrypt`: 对字段加密，主要用于用户密码。格式：`bcrypt(field1, field2...)`
+
+### 关系指令
+只能附加到关系上的指令。
+
+* `cascade`: 如果关系数据被删除，级联删除关联的对象。
+
 ## /update
+批量更新某些字段。通过 web post method发送请求。
+
+### 请求格式
+```json
+{
+   "EntityName1":{
+     "name":"张三",
+     "email":"zhangsan@rxdrag.com",
+     "ids":[2,3,5]
+   },
+   "EntityName2":{
+     ...
+   }
+}
+```
+基于安全方面因素考虑，update 目前不支持条件，只通过 ids 字段传递一个ID数组。
+
+update 目前不需要指令。
 
 ## /delete
+根据提供的 ID，删除数据。通过 web post method发送请求。
+
+### 请求格式
+
+```json
+{
+   "EntityName1 @cascade(pages, auths)":[2,3,5],
+   "EntityName2":7,
+   ...
+}
+```
+
+### 指令
+
+目前仅支持一个指令 `@cascade`.
+
+* `@cascade`: 级联删除关联的对象，格式： `@cascade(relations1, relations2...)`
 
 ## /upload
+上传文件，通过 web post method发送请求。
+
+指令还在开发中...
+
+### 请求格式
+```json
+{
+  "entity":"RxMedia",
+  "file":...
+  "folder":1
+}
+```
+目前仅需要支持RxMedia实体。
 
 ## 自定义指令
-本部分尚未完成，敬请期待...
+写一个自定义指令，是一件非常有挑战性的工作，所以这部分还没写:)，敬请期待...
