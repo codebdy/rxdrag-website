@@ -252,6 +252,6 @@ export interface PostMediaPovit {
 }
 
 ```
-新建实体跟关系的拥有者还是 Blog 包，这里可以会略对 System 包的影响。
+新建实体跟关系的拥有者还是 Blog 包，这里可以会略对 System 包的影响，不需要重新导出 System 包的接口文件。
 
 通用查询接口支持多级关联查询，用起来同样也很方便。
